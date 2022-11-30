@@ -1,2 +1,2 @@
-# powerapps
-Soluciones con PowerApps de Ejemplo
+# PowerApps
+Este repo contiene Soluciones con PowerApps de Ejemplo creadas por mi
