@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>new_responsiblecarechile_2c836</Name>
+  <AppVersion>2025-08-07T03:12:13Z</AppVersion>
+  <Status>Ready</Status>
+  <CreatedByClientVersion>3.25073.12.0</CreatedByClientVersion>
+  <MinClientVersion>3.25073.12.0</MinClientVersion>
+  <Tags>{"primaryDeviceWidth":"1366","primaryDeviceHeight":"768","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Tablet","showStatusBar":"false","publisherVersion":"3.25073.12","minimumRequiredApiVersion":"2.2.0","hasComponent":"false","hasUnlockedComponent":"false","isUnifiedRootApp":"false","sienaVersion":"20250805T042701Z-3.25072.6.0"}</Tags>
+  <IsCdsUpgraded>0</IsCdsUpgraded>
+  <GalleryItemId
+    xsi:nil="true"></GalleryItemId>
+  <BackgroundColor>RGBA(0,176,240,1)</BackgroundColor>
+  <DisplayName>Responsible Care Chile</DisplayName>
+  <Description
+    xsi:nil="true"></Description>
+  <CommitMessage
+    xsi:nil="true"></CommitMessage>
+  <Publisher
+    xsi:nil="true"></Publisher>
+  <AuthorizationReferences>[]</AuthorizationReferences>
+  <ConnectionReferences>{"4db9ddb7-bdc4-42f6-8fb5-e7676bc23a8e":{"id":"/providers/microsoft.powerapps/apis/shared_sharepointonline","displayName":"SharePoint","iconUri":"https://conn-afd-prod-endpoint-bmc9bqahasf3grgk.b01.azurefd.net/v1.0.1754/1.0.1754.4231/sharepointonline/icon.png","dataSources":["Chile_Observaciones","Chile_Registro de Avance","Chile_Subgerencia"],"dependencies":[],"dependents":[],"parameterHints":{},"parameterHintsV2":{},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{"https://oxyinc.sharepoint.com/sites/OxyChemSafetyObservations":{"dataSources":{"Chile_Observaciones":{"tableName":"68e43013-cb46-4774-99f0-6696ddb9406e"},"Chile_Registro de Avance":{"tableName":"f086eeae-4fe1-42c6-a01c-460cf64a8538"},"Chile_Subgerencia":{"tableName":"8071fc9e-a412-45af-8995-79218c2d48c9"}}}},"apiTier":"Standard","actions":["providers/PowerPlatform.Governance/Operations/Read","providers/PowerPlatform.Governance/Operations/Write"]}}</ConnectionReferences>
+  <DatabaseReferences>{}</DatabaseReferences>
+  <AppComponents>[]</AppComponents>
+  <AppComponentDependencies>[]</AppComponentDependencies>
+  <CanConsumeAppPass>1</CanConsumeAppPass>
+  <CanvasAppType>0</CanvasAppType>
+  <BypassConsent>0</BypassConsent>
+  <AdminControlBypassConsent>0</AdminControlBypassConsent>
+  <EmbeddedApp
+    xsi:nil="true"></EmbeddedApp>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <CdsDependencies>{"cdsdependencies":[]}</CdsDependencies>
+  <IsCustomizable>1</IsCustomizable>
+  <BackgroundImageUri>/CanvasApps/new_responsiblecarechile_2c836_BackgroundImageUri</BackgroundImageUri>
+  <DocumentUri>/CanvasApps/new_responsiblecarechile_2c836_DocumentUri.msapp</DocumentUri>
+  <AdditionalUris>
+    <AdditionalUri>/CanvasApps/new_responsiblecarechile_2c836_AdditionalUris0_identity.json</AdditionalUri>
+  </AdditionalUris>
+</CanvasApp>
