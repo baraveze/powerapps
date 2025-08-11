@@ -1,0 +1,68 @@
+{
+  "properties": {
+    "connectionReferences": {},
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "metadata": {
+            "operationMetadataId": "82649aa1-7972-4671-888f-746c57991aca"
+          },
+          "type": "Request",
+          "kind": "Http",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "maximoGlobal": {
+                  "type": "integer"
+                },
+                "maximoQueNecesitaAprobacion": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      },
+      "actions": {
+        "Redactar": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "f2ced1dd-f9b6-4e9d-930c-3658a313d0e1"
+          },
+          "type": "Compose",
+          "inputs": {
+            "maximoGlobal": 10000,
+            "maximoQueNecesitaAprobacion": 1000
+          }
+        },
+        "Respuesta": {
+          "runAfter": {
+            "Redactar": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "09e8190f-a5bd-4e78-9cd8-0fcd745e3a4d"
+          },
+          "type": "Response",
+          "kind": "Http",
+          "inputs": {
+            "statusCode": 200,
+            "body": "@outputs('Redactar')"
+          }
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

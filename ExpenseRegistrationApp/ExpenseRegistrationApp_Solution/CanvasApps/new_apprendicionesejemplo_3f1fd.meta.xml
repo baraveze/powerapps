@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>new_apprendicionesejemplo_3f1fd</Name>
+  <AppVersion>2022-11-30T14:46:11Z</AppVersion>
+  <Status>Ready</Status>
+  <CreatedByClientVersion>3.22111.19.0</CreatedByClientVersion>
+  <MinClientVersion>3.22111.19.0</MinClientVersion>
+  <Tags>{"primaryDeviceWidth":"640","primaryDeviceHeight":"1136","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Phone","publisherVersion":"3.22111.19","minimumRequiredApiVersion":"2.2.0","hasComponent":"false","hasUnlockedComponent":"false","isUnifiedRootApp":"false","sienaVersion":"20221130T035553Z-3.22111.19.0"}</Tags>
+  <IsCdsUpgraded>0</IsCdsUpgraded>
+  <GalleryItemId
+    xsi:nil="true"></GalleryItemId>
+  <BackgroundColor>RGBA(0,176,240,1)</BackgroundColor>
+  <DisplayName>App Rendiciones ejemplo</DisplayName>
+  <Description
+    xsi:nil="true"></Description>
+  <CommitMessage
+    xsi:nil="true"></CommitMessage>
+  <Publisher
+    xsi:nil="true"></Publisher>
+  <AuthorizationReferences>[]</AuthorizationReferences>
+  <ConnectionReferences>{"c1ac89ad-a008-40d0-87ca-63ca073cbda7":{"id":"/providers/microsoft.powerapps/apis/shared_logicflows","displayName":"Flujos lógicos","iconUri":"https://connectoricons-prod.azureedge.net/releases/v1.0.1534/1.0.1534.2605/logicflows/icon.png","dataSources":["ConsultarImportesMaximos"],"dependencies":[],"dependents":[],"parameterHints":{"workflowName":{"value":"5889b025-ba8f-4350-97ba-435f233b8cbf"},"workflowEntityId":{"value":"a2017931-fd6f-ed11-81ac-000d3a888295"}},"parameterHintsV2":{"workflowName":{"value":"5889b025-ba8f-4350-97ba-435f233b8cbf"},"workflowEntityId":{"value":"a2017931-fd6f-ed11-81ac-000d3a888295"}},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Standard","actions":["Run"]},"1f540811-f6e8-4168-9367-d404078f8e2f":{"id":"/providers/microsoft.powerapps/apis/shared_logicflows","displayName":"Flujos lógicos","iconUri":"https://connectoricons-prod.azureedge.net/releases/v1.0.1534/1.0.1534.2605/logicflows/icon.png","dataSources":["Enviarcorreoalsupervisor"],"dependencies":["95f4ccba-1b06-4879-9b00-f5d236e7b20e"],"dependents":[],"parameterHints":{"workflowName":{"value":"31184968-fded-467c-84ab-1a28d1525647"},"workflowEntityId":{"value":"b451c1fc-4f70-ed11-81ac-000d3a888295"},"95f4ccba-1b06-4879-9b00-f5d236e7b20e":{"value":"shared_gmail"}},"parameterHintsV2":{"workflowName":{"value":"31184968-fded-467c-84ab-1a28d1525647"},"workflowEntityId":{"value":"b451c1fc-4f70-ed11-81ac-000d3a888295"},"shared_gmail":{"value":"95f4ccba-1b06-4879-9b00-f5d236e7b20e"}},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Standard"},"95f4ccba-1b06-4879-9b00-f5d236e7b20e":{"id":"/providers/microsoft.powerapps/apis/shared_gmail","displayName":"Gmail","iconUri":"https://connectoricons-prod.azureedge.net/releases/v1.0.1590/1.0.1590.2954/gmail/icon.png","dataSources":[],"dependencies":[],"dependents":["1f540811-f6e8-4168-9367-d404078f8e2f","0611fcb6-aee3-4316-ab61-094808411a20"],"parameterHints":{},"parameterHintsV2":{},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Standard","authenticationType":"shared-application"},"0611fcb6-aee3-4316-ab61-094808411a20":{"id":"/providers/microsoft.powerapps/apis/shared_logicflows","displayName":"Flujos lógicos","iconUri":"https://connectoricons-prod.azureedge.net/releases/v1.0.1534/1.0.1534.2605/logicflows/icon.png","dataSources":["Enviarcorreoderechazo"],"dependencies":["95f4ccba-1b06-4879-9b00-f5d236e7b20e"],"dependents":[],"parameterHints":{"workflowName":{"value":"40bce1b9-5c85-4046-978d-bd4c7eaa6235"},"workflowEntityId":{"value":"9da2b503-5270-ed11-81ac-000d3a888295"},"95f4ccba-1b06-4879-9b00-f5d236e7b20e":{"value":"shared_gmail"}},"parameterHintsV2":{"workflowName":{"value":"40bce1b9-5c85-4046-978d-bd4c7eaa6235"},"workflowEntityId":{"value":"9da2b503-5270-ed11-81ac-000d3a888295"},"shared_gmail":{"value":"95f4ccba-1b06-4879-9b00-f5d236e7b20e"}},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Standard","actions":["Run"]}}</ConnectionReferences>
+  <DatabaseReferences>{}</DatabaseReferences>
+  <AppComponents>[]</AppComponents>
+  <AppComponentDependencies>[]</AppComponentDependencies>
+  <CanConsumeAppPass>1</CanConsumeAppPass>
+  <CanvasAppType>0</CanvasAppType>
+  <BypassConsent>0</BypassConsent>
+  <AdminControlBypassConsent>0</AdminControlBypassConsent>
+  <EmbeddedApp
+    xsi:nil="true"></EmbeddedApp>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <CdsDependencies>{"cdsdependencies":[]}</CdsDependencies>
+  <IsCustomizable>1</IsCustomizable>
+  <BackgroundImageUri>/CanvasApps/new_apprendicionesejemplo_3f1fd_BackgroundImageUri</BackgroundImageUri>
+  <DocumentUri>/CanvasApps/new_apprendicionesejemplo_3f1fd_DocumentUri.msapp</DocumentUri>
+</CanvasApp>

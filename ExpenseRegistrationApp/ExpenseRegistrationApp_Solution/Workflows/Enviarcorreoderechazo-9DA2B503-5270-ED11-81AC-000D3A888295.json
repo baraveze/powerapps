@@ -1,0 +1,97 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_gmail": {
+        "runtimeSource": "invoker",
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedgmail_4663e"
+        },
+        "api": {
+          "name": "shared_gmail"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "metadata": {
+            "operationMetadataId": "86e7be6b-d3ac-4d0f-a243-7681e0508ead"
+          },
+          "type": "Request",
+          "kind": "PowerApp",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Enviarcorreoelectrónico(V2)_A": {
+                  "type": "string",
+                  "format": "email",
+                  "description": "Lista de direcciones de correo electrónico válidas, separadas por una coma o un punto y coma.",
+                  "x-ms-powerflows-param-ispartial": false
+                },
+                "Enviarcorreoelectrónico(V2)_Cuerpo": {
+                  "type": "string",
+                  "format": "html",
+                  "description": "Cuerpo del correo electrónico de salida.. Este parámetro se usa como parte de \"EA449682-6DD6-4F72-81D8-5227641A0CBA\"",
+                  "x-ms-powerflows-param-ispartial": true
+                },
+                "Enviarcorreoelectrónico(V2)_Cuerpo_1": {
+                  "type": "string"
+                },
+                "Enviarcorreoelectrónico(V2)_Cuerpo_2": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Enviarcorreoelectrónico(V2)_A",
+                "Enviarcorreoelectrónico(V2)_Cuerpo",
+                "Enviarcorreoelectrónico(V2)_Cuerpo_1",
+                "Enviarcorreoelectrónico(V2)_Cuerpo_2"
+              ]
+            }
+          }
+        }
+      },
+      "actions": {
+        "Enviar_correo_electrónico_(V2)": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "af85c368-c826-4ea9-bc87-02fa2e1aa346"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_gmail",
+              "operationId": "SendEmailV2",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_gmail"
+            },
+            "parameters": {
+              "emailMessage/To": "@triggerBody()['Enviarcorreoelectrónico(V2)_A']",
+              "emailMessage/Subject": "¡Atención! El gasto que ingresaste ha sido rechazado por su superior",
+              "emailMessage/Body": "<p>Hola, te informarmos que el gasto relacionado a @{triggerBody()['Enviarcorreoelectrónico(V2)_Cuerpo']}, con importe @{triggerBody()['Enviarcorreoelectrónico(V2)_Cuerpo_1']} ha sido rechazado por tu supervisor.<br>\n<br>\nEl motivo de rechazo fue el siguiente:<br>\n@{triggerBody()['Enviarcorreoelectrónico(V2)_Cuerpo_2']}.<br>\n<br>\n¡Saludos!<br>\n<br>\n</p>"
+            },
+            "authentication": {
+              "type": "Raw",
+              "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+            }
+          }
+        }
+      },
+      "outputs": {}
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

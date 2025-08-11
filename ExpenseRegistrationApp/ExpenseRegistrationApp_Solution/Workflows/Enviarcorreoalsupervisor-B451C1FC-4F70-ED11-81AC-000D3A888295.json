@@ -1,0 +1,111 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_gmail": {
+        "runtimeSource": "invoker",
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedgmail_4663e"
+        },
+        "api": {
+          "name": "shared_gmail"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "metadata": {
+            "operationMetadataId": "723c7a02-a262-4d25-bef5-ab113dfee4b8"
+          },
+          "type": "Request",
+          "kind": "PowerApp",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Enviarcorreoelectrónico(V2)_A": {
+                  "type": "string",
+                  "format": "email",
+                  "description": "Lista de direcciones de correo electrónico válidas, separadas por una coma o un punto y coma.",
+                  "x-ms-powerflows-param-ispartial": false
+                },
+                "Enviarcorreoelectrónico(V2)_Asunto": {
+                  "type": "string",
+                  "description": "Asunto del correo electrónico saliente.. Este parámetro se usa como parte de \"B7F265A5-08D4-4148-B67D-B72564A86773\"",
+                  "x-ms-powerflows-param-ispartial": true
+                },
+                "Enviarcorreoelectrónico(V2)_Cuerpo": {
+                  "type": "string",
+                  "format": "html",
+                  "description": "Cuerpo del correo electrónico de salida.. Este parámetro se usa como parte de \"ACD6B847-C485-4C5B-895D-20CD6E67370F\"",
+                  "x-ms-powerflows-param-ispartial": true
+                },
+                "Enviarcorreoelectrónico(V2)_Cuerpo_1": {
+                  "type": "string"
+                },
+                "Enviarcorreoelectrónico(V2)_Cuerpo_2": {
+                  "type": "string"
+                },
+                "Enviarcorreoelectrónico(V2)_Cuerpo_3": {
+                  "type": "string"
+                },
+                "Enviarcorreoelectrónico(V2)_Cuerpo_4": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Enviarcorreoelectrónico(V2)_A",
+                "Enviarcorreoelectrónico(V2)_Asunto",
+                "Enviarcorreoelectrónico(V2)_Cuerpo",
+                "Enviarcorreoelectrónico(V2)_Cuerpo_1",
+                "Enviarcorreoelectrónico(V2)_Cuerpo_2",
+                "Enviarcorreoelectrónico(V2)_Cuerpo_3",
+                "Enviarcorreoelectrónico(V2)_Cuerpo_4"
+              ]
+            }
+          }
+        }
+      },
+      "actions": {
+        "Enviar_correo_electrónico_(V2)": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "cd9593e2-89a3-4077-b4a4-299447d14d69"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_gmail",
+              "operationId": "SendEmailV2",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_gmail"
+            },
+            "parameters": {
+              "emailMessage/To": "@triggerBody()['Enviarcorreoelectrónico(V2)_A']",
+              "emailMessage/Subject": "Se ha creado un nuevo gasto que debes aprobar - @{triggerBody()['Enviarcorreoelectrónico(V2)_Asunto']}",
+              "emailMessage/Body": "<p>Hola,<br>\n<br>\nEste correo es para informarte que el usuario @{triggerBody()['Enviarcorreoelectrónico(V2)_Cuerpo']} ha creado un nuevo gasto que debe ser aprobado por ti.<br>\n<br>\nPara aprobar o rechazar el mismo, debes acceder a la PowerApp. Te acercamos detalles del mismo:<br>\n<br>\nFecha: @{triggerBody()['Enviarcorreoelectrónico(V2)_Cuerpo_1']}<br>\nConcepto: @{triggerBody()['Enviarcorreoelectrónico(V2)_Cuerpo_2']}<br>\nImporte ($): @{triggerBody()['Enviarcorreoelectrónico(V2)_Cuerpo_3']}<br>\nDescripción del gasto: @{triggerBody()['Enviarcorreoelectrónico(V2)_Cuerpo_4']}<br>\n<br>\n<br>\nMuchas gracias!</p>"
+            },
+            "authentication": {
+              "type": "Raw",
+              "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+            }
+          }
+        }
+      },
+      "outputs": {}
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}
